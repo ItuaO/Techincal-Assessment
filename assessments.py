@@ -78,7 +78,7 @@ class assessments():
 
 
         #create a file name Report with current timestamp
-        timestamp = str(datetime.datetime.now())
+        timestamp = str(datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
         reportFilename = "Report_" + timestamp + ".txt"
         file = open(reportFilename, "w")
         line = "Report Generated at " + timestamp + "\n\n"
