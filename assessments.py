@@ -200,7 +200,7 @@ class assessments():
         nextpageToken = response.get('nextPageToken', None)
         while nextpageToken:
             try:
-                response = service.files().list(q=query).execute()
+                response = service.files().list(q=query,pageToken=nextPageToken).execute()
 
             except errors.HttpError as error:
                 # The API encountered a problem.
@@ -393,7 +393,7 @@ class assessments():
 
         while nextpageToken:
             try:
-                response = service.files().list(q=query).execute()
+                response = service.files().list(q=query,pageToken=nextPageToken).execute()
 
             except errors.HttpError as error:
                 # The API encountered a problem.
